@@ -1,16 +1,16 @@
-# todo_app_pro_mina
+# todo_app_pro
 
-A new Flutter project.
+* Todo App.
+## video
 
-## Getting Started
+[<img src="assets_github/1.jpg">](https://youtu.be/IgzEWMFqnmE
+ "Now in Android: 21 or above")
 
-This project is a starting point for a Flutter application.
+ 
+## images
+# Screen 1
+![Todo App1](assets_github/1.jpg)
+# Completed Tasks
+![Todo App2](assets_github/2.jpg)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

@@ -1,0 +1,2 @@
+   pub global run rename --bundleId com.michelle_raouf.todo_app_pro
+    pub global run rename --appname "Todo App Pro"

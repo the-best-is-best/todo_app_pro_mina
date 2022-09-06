@@ -32,21 +32,26 @@ class MyTextFormField extends StatelessWidget {
       children: [
         Text(
           title,
-          style: getMediumStyle(),
+          style: getRegularStyle(color: Colors.blue),
         ),
         const SizedBox(height: 12),
         TextFormField(
+          style: getMediumStyle(),
           enabled: enable,
           controller: controller,
           onTap: onTap,
           keyboardType: onTap == null ? keyboardType : TextInputType.none,
           decoration: InputDecoration(
+              contentPadding: EdgeInsets.zero,
               errorStyle: getLightStyle(color: Colors.red),
               enabledBorder: const UnderlineInputBorder(
-                borderSide: BorderSide(width: 2, color: Colors.blue),
+                borderSide: BorderSide(
+                  width: 1,
+                  color: Colors.blue,
+                ),
               ),
               focusedBorder: const UnderlineInputBorder(
-                borderSide: BorderSide(width: 3, color: Colors.blue),
+                borderSide: BorderSide(width: 2, color: Colors.blue),
               )),
           validator: validator,
           onSaved: onSaved,
