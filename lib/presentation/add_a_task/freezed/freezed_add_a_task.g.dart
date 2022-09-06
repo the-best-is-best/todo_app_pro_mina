@@ -6,8 +6,8 @@ part of 'freezed_add_a_task.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FreezedAddATask _$$_FreezedAddATaskFromJson(Map<String, dynamic> json) =>
-    _$_FreezedAddATask(
+_$_TaskModel _$$_TaskModelFromJson(Map<String, dynamic> json) => _$_TaskModel(
+      id: json['id'] as int?,
       title: json['title'] as String,
       category: json['category'] as String,
       date: json['date'] as String,
@@ -16,8 +16,9 @@ _$_FreezedAddATask _$$_FreezedAddATaskFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String,
     );
 
-Map<String, dynamic> _$$_FreezedAddATaskToJson(_$_FreezedAddATask instance) =>
+Map<String, dynamic> _$$_TaskModelToJson(_$_TaskModel instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'title': instance.title,
       'category': instance.category,
       'date': instance.date,

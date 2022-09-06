@@ -1,0 +1,2 @@
+Main color hex = #409ce5
+border color hex = #bdced6

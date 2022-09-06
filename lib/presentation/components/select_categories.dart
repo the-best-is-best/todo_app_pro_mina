@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app_pro_mina/app/resources/styles_manger.dart';
-import 'package:todo_app_pro_mina/cubit/app_cubit.dart';
-import 'package:todo_app_pro_mina/cubit/app_states.dart';
+import 'package:todo_app_pro_mina/app/cubit/app_cubit.dart';
+import 'package:todo_app_pro_mina/app/cubit/app_states.dart';
 import 'package:todo_app_pro_mina/presentation/components/my_text.dart';
 
 class SelectCategory extends StatelessWidget {
@@ -15,7 +16,7 @@ class SelectCategory extends StatelessWidget {
     return BlocBuilder<AppCubit, AppStates>(builder: (context, state) {
       AppCubit appCubit = AppCubit.get(context);
       return SizedBox(
-        height: 30,
+        height: 45.h,
         child: ListView.separated(
           shrinkWrap: true,
           itemCount: appCubit.categories.length,

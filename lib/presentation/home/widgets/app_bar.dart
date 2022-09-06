@@ -6,8 +6,9 @@ import 'package:todo_app_pro_mina/app/extensions/extension_date_time.dart';
 import 'package:todo_app_pro_mina/app/resources/font_manager.dart';
 import 'package:todo_app_pro_mina/app/resources/routes_manager.dart';
 import 'package:todo_app_pro_mina/app/resources/styles_manger.dart';
-import 'package:todo_app_pro_mina/cubit/app_cubit.dart';
-import 'package:todo_app_pro_mina/cubit/app_states.dart';
+import 'package:todo_app_pro_mina/app/cubit/app_cubit.dart';
+import 'package:todo_app_pro_mina/app/cubit/app_states.dart';
+import 'package:todo_app_pro_mina/gen/assets.gen.dart';
 import 'package:todo_app_pro_mina/presentation/components/my_text.dart';
 
 class AppBarHome extends StatelessWidget {
@@ -31,7 +32,7 @@ class AppBarHome extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15) +
-              const EdgeInsets.only(top: 30),
+              const EdgeInsets.only(top: 80),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -40,8 +41,17 @@ class AppBarHome extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.menu, size: FontSize.s40),
-                      Icon(Icons.notifications, size: FontSize.s40),
+                      IconButton(
+                          onPressed: () {},
+                          icon:
+                              AssetGenImage(const $AssetsImagesGen().menu.path)
+                                  .image()),
+                      IconButton(
+                        icon: AssetGenImage(
+                                const $AssetsImagesGen().notification.path)
+                            .image(),
+                        onPressed: () {},
+                      ),
                     ],
                   ),
                 ],
@@ -98,6 +108,7 @@ class AppBarHome extends StatelessWidget {
                     const SizedBox(height: 10),
                     DatePicker(
                       appCubit.startSelectedDate,
+                      daysCount: appCubit.totalDays,
                       monthTextStyle: getBoldStyle(fontSize: 0),
                       dateTextStyle: getBoldStyle(fontSize: FontSize.s24),
                       dayTextStyle: getRegularStyle(fontSize: FontSize.s18),

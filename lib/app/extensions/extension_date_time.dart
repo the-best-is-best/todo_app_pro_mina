@@ -1,6 +1,5 @@
 // ignore_for_file: unnecessary_this
 
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 extension ExtensionDateTime on DateTime {
@@ -18,5 +17,15 @@ extension ExtensionDateTime on DateTime {
 
   String getTime() {
     return DateFormat('hh:mm a').format(this);
+  }
+
+  String toDateString() {
+    String outputDate = DateFormat('yyyy/MM/dd').format(this);
+    return outputDate;
+  }
+
+  String toTimeString() {
+    String outputDate = DateFormat('hh:mm a').format(this);
+    return outputDate;
   }
 }

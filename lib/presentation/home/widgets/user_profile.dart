@@ -11,15 +11,14 @@ class UserProfile extends StatelessWidget {
     return Positioned(
       right: 0,
       child: Container(
-        margin: const EdgeInsets.all(15),
+        margin: const EdgeInsets.only(top: 30, right: 30),
         width: 40,
         height: 40,
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(topRight: Radius.circular(30))),
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
-          child: AssetGenImage(const $AssetsImagesGen().userProfile.path)
-              .image(width: 30, color: Colors.black),
+          child: SvgGenImage(const $AssetsSvgGen().profile.path).svg(),
         ),
       ),
     );

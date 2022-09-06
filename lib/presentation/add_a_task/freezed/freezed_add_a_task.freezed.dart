@@ -14,12 +14,13 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-FreezedAddATask _$FreezedAddATaskFromJson(Map<String, dynamic> json) {
-  return _FreezedAddATask.fromJson(json);
+TaskModel _$TaskModelFromJson(Map<String, dynamic> json) {
+  return _TaskModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$FreezedAddATask {
+mixin _$TaskModel {
+  int? get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get category => throw _privateConstructorUsedError;
   String get date => throw _privateConstructorUsedError;
@@ -29,17 +30,17 @@ mixin _$FreezedAddATask {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FreezedAddATaskCopyWith<FreezedAddATask> get copyWith =>
+  $TaskModelCopyWith<TaskModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FreezedAddATaskCopyWith<$Res> {
-  factory $FreezedAddATaskCopyWith(
-          FreezedAddATask value, $Res Function(FreezedAddATask) then) =
-      _$FreezedAddATaskCopyWithImpl<$Res>;
+abstract class $TaskModelCopyWith<$Res> {
+  factory $TaskModelCopyWith(TaskModel value, $Res Function(TaskModel) then) =
+      _$TaskModelCopyWithImpl<$Res>;
   $Res call(
-      {String title,
+      {int? id,
+      String title,
       String category,
       String date,
       String startTime,
@@ -48,16 +49,16 @@ abstract class $FreezedAddATaskCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FreezedAddATaskCopyWithImpl<$Res>
-    implements $FreezedAddATaskCopyWith<$Res> {
-  _$FreezedAddATaskCopyWithImpl(this._value, this._then);
+class _$TaskModelCopyWithImpl<$Res> implements $TaskModelCopyWith<$Res> {
+  _$TaskModelCopyWithImpl(this._value, this._then);
 
-  final FreezedAddATask _value;
+  final TaskModel _value;
   // ignore: unused_field
-  final $Res Function(FreezedAddATask) _then;
+  final $Res Function(TaskModel) _then;
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? category = freezed,
     Object? date = freezed,
@@ -66,6 +67,10 @@ class _$FreezedAddATaskCopyWithImpl<$Res>
     Object? description = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -95,14 +100,14 @@ class _$FreezedAddATaskCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_FreezedAddATaskCopyWith<$Res>
-    implements $FreezedAddATaskCopyWith<$Res> {
-  factory _$$_FreezedAddATaskCopyWith(
-          _$_FreezedAddATask value, $Res Function(_$_FreezedAddATask) then) =
-      __$$_FreezedAddATaskCopyWithImpl<$Res>;
+abstract class _$$_TaskModelCopyWith<$Res> implements $TaskModelCopyWith<$Res> {
+  factory _$$_TaskModelCopyWith(
+          _$_TaskModel value, $Res Function(_$_TaskModel) then) =
+      __$$_TaskModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String title,
+      {int? id,
+      String title,
       String category,
       String date,
       String startTime,
@@ -111,18 +116,18 @@ abstract class _$$_FreezedAddATaskCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_FreezedAddATaskCopyWithImpl<$Res>
-    extends _$FreezedAddATaskCopyWithImpl<$Res>
-    implements _$$_FreezedAddATaskCopyWith<$Res> {
-  __$$_FreezedAddATaskCopyWithImpl(
-      _$_FreezedAddATask _value, $Res Function(_$_FreezedAddATask) _then)
-      : super(_value, (v) => _then(v as _$_FreezedAddATask));
+class __$$_TaskModelCopyWithImpl<$Res> extends _$TaskModelCopyWithImpl<$Res>
+    implements _$$_TaskModelCopyWith<$Res> {
+  __$$_TaskModelCopyWithImpl(
+      _$_TaskModel _value, $Res Function(_$_TaskModel) _then)
+      : super(_value, (v) => _then(v as _$_TaskModel));
 
   @override
-  _$_FreezedAddATask get _value => super._value as _$_FreezedAddATask;
+  _$_TaskModel get _value => super._value as _$_TaskModel;
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? category = freezed,
     Object? date = freezed,
@@ -130,7 +135,11 @@ class __$$_FreezedAddATaskCopyWithImpl<$Res>
     Object? endTime = freezed,
     Object? description = freezed,
   }) {
-    return _then(_$_FreezedAddATask(
+    return _then(_$_TaskModel(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -161,18 +170,21 @@ class __$$_FreezedAddATaskCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FreezedAddATask implements _FreezedAddATask {
-  _$_FreezedAddATask(
-      {required this.title,
+class _$_TaskModel implements _TaskModel {
+  _$_TaskModel(
+      {this.id,
+      required this.title,
       required this.category,
       required this.date,
       required this.startTime,
       required this.endTime,
       required this.description});
 
-  factory _$_FreezedAddATask.fromJson(Map<String, dynamic> json) =>
-      _$$_FreezedAddATaskFromJson(json);
+  factory _$_TaskModel.fromJson(Map<String, dynamic> json) =>
+      _$$_TaskModelFromJson(json);
 
+  @override
+  final int? id;
   @override
   final String title;
   @override
@@ -188,14 +200,15 @@ class _$_FreezedAddATask implements _FreezedAddATask {
 
   @override
   String toString() {
-    return 'FreezedAddATask(title: $title, category: $category, date: $date, startTime: $startTime, endTime: $endTime, description: $description)';
+    return 'TaskModel(id: $id, title: $title, category: $category, date: $date, startTime: $startTime, endTime: $endTime, description: $description)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FreezedAddATask &&
+            other is _$_TaskModel &&
+            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.category, category) &&
             const DeepCollectionEquality().equals(other.date, date) &&
@@ -209,6 +222,7 @@ class _$_FreezedAddATask implements _FreezedAddATask {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(category),
       const DeepCollectionEquality().hash(date),
@@ -218,29 +232,32 @@ class _$_FreezedAddATask implements _FreezedAddATask {
 
   @JsonKey(ignore: true)
   @override
-  _$$_FreezedAddATaskCopyWith<_$_FreezedAddATask> get copyWith =>
-      __$$_FreezedAddATaskCopyWithImpl<_$_FreezedAddATask>(this, _$identity);
+  _$$_TaskModelCopyWith<_$_TaskModel> get copyWith =>
+      __$$_TaskModelCopyWithImpl<_$_TaskModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FreezedAddATaskToJson(
+    return _$$_TaskModelToJson(
       this,
     );
   }
 }
 
-abstract class _FreezedAddATask implements FreezedAddATask {
-  factory _FreezedAddATask(
-      {required final String title,
+abstract class _TaskModel implements TaskModel {
+  factory _TaskModel(
+      {final int? id,
+      required final String title,
       required final String category,
       required final String date,
       required final String startTime,
       required final String endTime,
-      required final String description}) = _$_FreezedAddATask;
+      required final String description}) = _$_TaskModel;
 
-  factory _FreezedAddATask.fromJson(Map<String, dynamic> json) =
-      _$_FreezedAddATask.fromJson;
+  factory _TaskModel.fromJson(Map<String, dynamic> json) =
+      _$_TaskModel.fromJson;
 
+  @override
+  int? get id;
   @override
   String get title;
   @override
@@ -255,6 +272,6 @@ abstract class _FreezedAddATask implements FreezedAddATask {
   String get description;
   @override
   @JsonKey(ignore: true)
-  _$$_FreezedAddATaskCopyWith<_$_FreezedAddATask> get copyWith =>
+  _$$_TaskModelCopyWith<_$_TaskModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
