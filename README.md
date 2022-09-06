@@ -8,7 +8,7 @@
 
 ## video
 
-[<img src="assets_github/1.jpg">](https://youtu.be/IgzEWMFqnmE
+[<p align="center" width="100%"><img src="assets_github/1.jpg" width="150"></p>](https://youtu.be/IgzEWMFqnmE
  "Now in Android: 21 or above")
 
  
