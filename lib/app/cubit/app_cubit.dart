@@ -120,6 +120,14 @@ class AppCubit extends Cubit<AppStates> {
   }
 
   void addNewTask() async {
+    String dateTimeStartScheduleString =
+        "${freezedAddATask.date} ${freezedAddATask.startTime}";
+    DateTime dateTimeStartSchedule = dateTimeStartScheduleString.toDateTime();
+
+    String dateTimeEndScheduleString =
+        "${freezedAddATask.date} ${freezedAddATask.endTime}";
+    DateTime dateTimeEndSchedule = dateTimeEndScheduleString.toDateTime();
+
     int id = await db.transaction((txn) async => await txn.rawInsert(
         """INSERT INTO tasks(title, description, date, startTime ,endTime , category) 
         VALUES("${freezedAddATask.title}", "${freezedAddATask.description}" ,"${freezedAddATask.date}", "${freezedAddATask.startTime}",
@@ -143,7 +151,18 @@ class AppCubit extends Cubit<AppStates> {
         endTime: '',
         startTime: '');
     getTasksInDate();
-
+    await di<NotificationServices>().createReminderNotification(
+        ReceivedNotificationModel(
+            title: freezedAddATask.title,
+            body: freezedAddATask.description,
+            dateTime: dateTimeStartSchedule,
+            id: id));
+    await di<NotificationServices>().createReminderNotification(
+        ReceivedNotificationModel(
+            title: freezedAddATask.title,
+            body: "${freezedAddATask.description} Ended",
+            dateTime: dateTimeEndSchedule,
+            id: id * 1000));
     emit(TaskAddedState());
   }
 }

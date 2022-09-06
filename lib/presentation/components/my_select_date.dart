@@ -19,45 +19,36 @@ class MySelectDate extends StatelessWidget {
   DateTime dateTimeSelected;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
       children: [
-        MyText(
-          title: 'Date',
-          style: getRegularStyle(color: Colors.blue),
-        ),
-        Row(
-          children: [
-            Expanded(
-              flex: 3,
-              child: MyTextFormField(
-                controller: dateController,
-                onSaved: (val) {
-                  AppCubit appCubit = AppCubit.get(context);
+        Expanded(
+          flex: 3,
+          child: MyTextFormField(
+            controller: dateController,
+            onSaved: (val) {
+              AppCubit appCubit = AppCubit.get(context);
 
-                  appCubit.addDate(dateTimeSelected.toDateString());
-                },
-                onTap: () async {
-                  DateTime val = await context.showMyDatePicker();
-                  dateTimeSelected = val;
-                  dateController.text = val.getNameOfWeekAndDayAndMonth();
-                },
-                title: "Select Date",
-                validator: (String? value) {
-                  return null;
-                },
-              ),
-            ),
-            Expanded(
-                child: IconButton(
-              icon: SvgGenImage(const $AssetsSvgGen().calender.path).svg(),
-              onPressed: () async {
-                dateController.text = DateFormat('EEEE, d  MMMM')
-                    .format(await context.showMyDatePicker());
-              },
-            ))
-          ],
+              appCubit.addDate(dateTimeSelected.toDateString());
+            },
+            onTap: () async {
+              DateTime val = await context.showMyDatePicker();
+              dateTimeSelected = val;
+              dateController.text = val.getNameOfWeekAndDayAndMonth();
+            },
+            title: "Select Date",
+            validator: (String? value) {
+              return null;
+            },
+          ),
         ),
+        Expanded(
+            child: IconButton(
+          icon: SvgGenImage(const $AssetsSvgGen().calender.path).svg(),
+          onPressed: () async {
+            dateController.text = DateFormat('EEEE, d  MMMM')
+                .format(await context.showMyDatePicker());
+          },
+        ))
       ],
     );
   }
