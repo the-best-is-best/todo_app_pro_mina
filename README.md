@@ -15,7 +15,7 @@
 ## images
 # Screen 1
 ![Todo App1](assets_github/1.jpg)
-# Completed Tasks
+# Screen 2
 ![Todo App2](assets_github/2.jpg)
 
 
